@@ -1,5 +1,6 @@
 package src;
 
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -306,19 +307,19 @@ public class View extends JFrame
 	/* Inicializa Imagens */
 	private void Initsrc() throws IOException
 	{
-		bg_preto = ImageIO.read(getClass().getResource("/image/bg_preto.png"));
-		bg_branco = ImageIO.read(getClass().getResource("/image/bg_branco.png"));
-		p1 = ImageIO.read(getClass().getResource("/image/p1.png"));
-		p2 = ImageIO.read(getClass().getResource("/image/p2.png"));
-		titulo_img = ImageIO.read(getClass().getResource("/image/titulo.png"));
-		ita = ImageIO.read(getClass().getResource("/image/ita.png"));
-		regras = ImageIO.read(getClass().getResource("/image/regras.png"));
-		d1 = ImageIO.read(getClass().getResource("/image/d1.png"));
-		d2 = ImageIO.read(getClass().getResource("/image/d2.png"));
-		e1 = ImageIO.read(getClass().getResource("/image/e1.png"));
-		e2 = ImageIO.read(getClass().getResource("/image/e2.png"));
-		capa = ImageIO.read(getClass().getResource("/image/Capa.png"));
-		creditos = ImageIO.read(getClass().getResource("/image/creditos.png"));
+		bg_preto = ImageIO.read(getClass().getResource("/images/bg_preto.png"));
+		bg_branco = ImageIO.read(getClass().getResource("/images/bg_branco.png"));
+		p1 = ImageIO.read(getClass().getResource("/images/p1.png"));
+		p2 = ImageIO.read(getClass().getResource("/images/p2.png"));
+		titulo_img = ImageIO.read(getClass().getResource("/images/titulo.png"));
+		ita = ImageIO.read(getClass().getResource("/images/ita.png"));
+		regras = ImageIO.read(getClass().getResource("/images/regras.png"));
+		d1 = ImageIO.read(getClass().getResource("/images/d1.png"));
+		d2 = ImageIO.read(getClass().getResource("/images/d2.png"));
+		e1 = ImageIO.read(getClass().getResource("/images/e1.png"));
+		e2 = ImageIO.read(getClass().getResource("/images/e2.png"));
+		capa = ImageIO.read(getClass().getResource("/images/Capa.png"));
+		creditos = ImageIO.read(getClass().getResource("/images/creditos.png"));
 	}
 
 	/* Insere peça em determinada posição */

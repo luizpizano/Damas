@@ -1,4 +1,5 @@
 package src;
+
 import java.io.*;
 import java.net.URL;
 import javax.sound.sampled.*;
@@ -18,7 +19,7 @@ public class SoundTela extends JFrame {
 
 		try {
 			// 	Open an audio input stream.
-			URL url = this.getClass().getResource("/audio/zelda.wav");
+			URL url = getClass().getResource("/audio/zelda.wav");
 			AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
 			// 	Get a sound clip resource.
 			clip = AudioSystem.getClip();

@@ -10,7 +10,7 @@ public class Server extends Thread {
 	//atributos para estabelecimento de rede
 	private ServerSocket server; // server socket
 	private Socket connection; // connection to client
-	private int counter = 0; // counter of number of connections
+	private int counter = -1; // counter of number of connections
 	private MultiThreadClient[] jogador = new MultiThreadClient[10];
 
 	//atributos referente à lógica do jogo
@@ -20,13 +20,15 @@ public class Server extends Thread {
 	{
 		try // set up server to receive connections; process connections
 		{
-			System.out.println("Servidor Iniciado");
-			server = new ServerSocket( 12345, 10 ); // create ServerSocket
 			while ( true ) 
 			{
 				System.out.println("aguardando conexao");
 				connection = server.accept();
 				System.out.println("conectou");
+				
+				counter++;
+				counter=counter%10;
+				
 				jogador[counter] = new MultiThreadClient(connection,counter/2); 
 
 				jogador[counter].getOutput().writeObject("player"+Integer.toString( (counter+1)%2+1 ) );
@@ -41,16 +43,26 @@ public class Server extends Thread {
 					this.novoJogo();
 				}
 				jogador[counter].start();
-				counter++;
-				counter=counter%10;
 			} // end while   
 		} // end try
 		catch ( IOException ioException ) 
 		{
+			ioException.printStackTrace();
 			System.out.println("LOLOLOLOLO");
+			this.run();
 		} // end catch
 	} // end method runServer
 
+	public void initialize(){
+		System.out.println("Servidor Iniciado");
+		try {
+			server = new ServerSocket( 12345, 10 );
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} // create ServerSocket
+	}
+	
 	public void novoJogo(){
 		damaLogica[ counter/2 ] = new Logica();
 	}

@@ -1,4 +1,5 @@
 package src;
+
 import java.io.*;
 import java.net.URL;
 import javax.sound.sampled.*;
@@ -18,7 +19,7 @@ public class SoundClipTest extends JFrame {
 
 		try {
 			// 	Open an audio input stream.
-			URL url = this.getClass().getClassLoader().getResource("/audio/Fatality (Mortal Kombat) Sound Effect.wav");
+			URL url = getClass().getResource("/audio/FatalityMortalKombat.wav");
 			AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
 			// 	Get a sound clip resource.
 			Clip clip = AudioSystem.getClip();
